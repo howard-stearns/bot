@@ -10,7 +10,7 @@ recognition.maxAlternatives = 1;
 
 startButton.onclick = _ => {
     console.log('start');
-    startButton.style.display = 'none';    
+    startButton.style.display = 'none';
     recognition.start();
 };
 

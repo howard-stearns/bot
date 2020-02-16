@@ -16,7 +16,7 @@
     <h1>Smart Dumb Pet</h1>
 
     <blockquote>
-      <b><i>Chrome Only!</i></b><br>
+      <i><b>Chrome Only!</b> Please see <a href="#technology">Speech to Text</a>, below.</i><br>
       <a href="#goals">Goals</a><br>
       <a href="#examples">Examples</a><br>
       <a href="#technology">Technology</a>
@@ -87,14 +87,16 @@
     </section>
     <section id="technology">
       <h2>Technology</h2>
-      <p><b>Speech to Text</b> is standardized in the <a href="https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition">Speech Recognition API</a>. Alas, no one officially supports it, but it is available under the name "webkitSpeechRecognition" on Chrome. <i>This is the only reason that these tests are Chrome-only.</i> In production, one would have to polyfill with a paid service (such as Google's). Note: chrome processes the data on its servers. So there is a time delay, and privacy considerations.</p>
+      <p><b>Speech to Text</b> is standardized in the <a href="https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition">Speech Recognition API</a>. Alas, no one officially supports it, but it is available under the name "webkitSpeechRecognition" on Chrome. <i>This is the only reason that these tests are Chrome-only.</i> And Android chrome makes an annoyting chime every time the SpeechRecognition starts listening, including after the silence timeout. (Maybe I could mute around the duration of the chime, and some versions of Chrome have a "continuous" recognition mode.) Where the standard SpeechRecognition cannot be used, one would have to polyfill with a paid service (such as Google's). Note: Chrome SpeechRecognition processes the data on its servers. So there is a time delay, and privacy considerations.</p>
       <p><b>Text to Speech</b> is built into every modern browser under the <a href="https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis">Speech Synthesis API</a>. Note: it must be turned on by user action -- there is no way to make it start speaking on page load without the user clicking on <i>something</i>.</p>
       <p><b>Chatbot</b> engines - based on typed text - have been around since the <a href="https://en.wikipedia.org/wiki/ELIZA">mid '60's</a>. The <a href="https://www.salon.com/2003/02/26/loebner_part_one/">Loebner prize</a> drove further development in the '90's and 00's, in which most engines had a large corpus of stylized text-match/responses, and an engine that applies them. Here we use:
 	  <ol>
 	    <li>The Javascript version of the <a href="https://www.rivescript.com/">RiveScript</a> engine. It uses a nice <a href="https://www.rivescript.com/docs/tutorial">plaintext response set</a>. This should be easier for us to edit than, e.g., the XML that was used in the '90's.</li>
 	    <li>The public <a href="https://github.com/aichaos/aiden">"Aiden"</a> response set corpus for Rivesceript. Note: while RiveScript is MIT license, Aiden is CCA-4 ShareAlike. This set is quite small, and not very good. (I had started to use one of the several versions of the turn-of-the-century response sets that were usedf by the A.L.I.C.E. foundation for Loebner. I grabbed one of these <a href="https://code.google.com/archive/p/aiml-en-us-foundation-alice/">'aaa' or AIML sets</a>, and translated it to RiveScript using <a href="https://github.com/aichaos/aiml2rs">aiml2rs</a>. A lot of fix up was required. But then I came across Aiden, but since Aiden isn't very good, I may go back to that.)</li>
 	  </ol>
-	  There may be better choices. In 2013-14, the AIML/A.L.I.C.E. author (Richard Wallace) created an improved <a href="https://code.google.com/archive/p/aiml-en-us-foundation-alice2/">AIML 2.0 with an updated corpus</a>, and a new Java-based program to run it called <a href="https://code.google.com/archive/p/program-ab/">ab</a>. (The original was in Lisp.) But this project soon died. I don't know if it worked, worked well, or what it woiuld take to adapt it to our uses. So for this experiment, I went with the older, proven material.
+	    There may be better choices. In 2013-14, the AIML/A.L.I.C.E. author (Richard Wallace) created an improved <a href="https://code.google.com/archive/p/aiml-en-us-foundation-alice2/">AIML 2.0 with an updated corpus</a>, and a new Java-based program to run it called <a href="https://code.google.com/archive/p/program-ab/">ab</a>. (The original was in Lisp.) But this project soon died. I don't know if it worked, worked well, or what it woiuld take to adapt it to our uses. So for this experiment, I went with the older, proven material.
+	  <br>
+	  And I don't know what quirks we'll find with RiveScript. For example, one thing I do know, is that the "variables" that the engine learns about each user are kept in memory, without provision for persisting to a long-term storage that are shared between Web server instances.
       </p>
       <p><b>Integration<b> is suprisingly easy. The entire server application is <i>FIXME here</i>, and the entire client side is <i>FIXME here</i> (and much of the latter is in getting the Continuous Loopback to work reliably).
       </p>

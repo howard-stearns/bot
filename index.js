@@ -7,7 +7,9 @@ const bot = new RiveScript();
 
 bot.loadDirectory("rs").then(_ => {
     bot.sortReplies();
+    bot.setUservar ('browser', 'isGroupChat', 'true'); // Disables "interview" mode.
     //bot.reply('server', "Hello, bot!").then(reply => console.log("The bot says: " + reply));
+    //bot.reply('server', "shake").then(reply => console.log("The bot says: " + reply));
 }).catch(console.error);
 
 app.use(express.static(__dirname + '/public'));
