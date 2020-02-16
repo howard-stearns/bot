@@ -43,6 +43,9 @@ section {
   margin: 1.5em auto;
   width: 400px;
 }
+img {
+    height: 200px;
+}
 button {
   display: block;
   -webkit-appearance: none;

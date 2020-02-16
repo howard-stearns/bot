@@ -1,0 +1,31 @@
++ (sit|set)
+- command pet https://bullyade.com/wp-content/uploads/2018/06/child-training-dog-sit-750x350.jpg
+
++ shake
+- command pet https://images.baxterboo.com/global/images/article/E99933E5-5056-800A-6B89B889D79D6223.jpg
+
++ rollover
+- command pet http://allpetnews.com/wp-content/uploads/2011/10/Dog-Rolling-Over.jpg
+
++ play dead
+- command pet https://i.imgflip.com/2kut2n.jpg
+
++ fetch
+- command pet https://external-preview.redd.it/BWK5kX3wW4x29MP3xmKNz1zddCI1ZllktemE7jmIFz0.jpg?auto=webp&s=744992c4d37b092ad477ae3134bb8e03b911c49f
+
++ (find friends|find [other] dogs|find other pets)
+- command pet https://www.robinkbennett.com/wp-content/uploads/2013/11/shutterstock_51472228-760x432.jpg
+
++ find people
+- command pet https://cdn2-www.dogtime.com/assets/uploads/2012/05/people-friendly-dog-2.jpg
+
++ find food
+- command pet https://d3eh3svpl1busq.cloudfront.net/NgixRrFkBQeTlDCSdcOpdSPEAchKObDh/assets/static/optimized/rev-d7f2ff0/wp-content/uploads/2018/04/dog-with-pizza-in-mouth.jpg
+
++ ([go] back|stop|[go] home)
+- command home
+
++ (speak | bark)
+- command speak woof
+
+
