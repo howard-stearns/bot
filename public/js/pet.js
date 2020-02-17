@@ -35,7 +35,7 @@ recognition.onresult = event => {
     outputYou.textContent = text;
     console.log('Confidence: ' + results[0][0].confidence);
     thinking = true;
-    socket.emit('chat message', text);
+    socket.emit('pet message', text);
 };
 
 // IWBNI we got nomatch, per spec. Instead, we sometimes get a 'no-speech' error, and sometimes just the 'end' event.
@@ -72,7 +72,6 @@ function command(text) {
     const commandKey = 'command',
 	  commands = {
 	      pet: url => pet.src = url,
-	      speak: text => synthVoice(text),
 	      home: _ => window.location.href = "index.html"
 	  };
     if (!text.startsWith(commandKey)) return;

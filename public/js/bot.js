@@ -19,7 +19,7 @@ recognition.onspeechend = _ => {
     console.log('stop');
     recognition.stop(); // Triggers attempt to construct a result.
 };
-
+var messageName = 'aiden message';
 recognition.onresult = event => {
     const results = event.results;
     let last = results.length - 1;
@@ -28,7 +28,7 @@ recognition.onresult = event => {
     outputYou.textContent = text;
     console.log('Confidence: ' + results[0][0].confidence);
 
-    socket.emit('chat message', text);
+    socket.emit(messageName, text);
 };
 
 function synthVoice(text) {
@@ -43,4 +43,7 @@ socket.on('bot reply', function(replyText) {
 
     if (replyText == '') replyText = '(No answer...)';
     outputBot.textContent = replyText;
+});
+[chooseAiden, chooseAlice].forEach(button => {
+    button.onchange = e => messageName = e.target.value;
 });

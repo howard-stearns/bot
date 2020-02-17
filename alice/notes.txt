@@ -1,0 +1,2 @@
+! var botmaster         = Howard
+! var master         	= Howard

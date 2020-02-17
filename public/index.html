@@ -40,7 +40,7 @@
     <section id="examples">
       <h2>Examples</h2>
       <p>
-	To evaluate the possibilities, we break things out into six separate tests. The "demo" is really the last of these, but looking at each one in turn should give you an idea of what is actually going on, especially where there are aspects that can be improved:
+	To evaluate the possibilities, we break things out into five separate tests. The "demo" is really the last of these, but looking at each one in turn should give you an idea of what is actually going on, especially where there are aspects that can be improved:
 	<ol>
 	  <li>
 	    <a href="echo.html"><b>Echo</b></a> lets you evaluate:
@@ -48,10 +48,10 @@
 	      <li>how well the speech recognition captures what you are saying;</li>
 	      <li>how the speech synthesis sounds.</li>
 	    </ul>
-	    Press the button and say something. The page captures what you said in a box, and then reads that back to you. <!-- <i>FIXME: There are options for voice, pitch, rate.</i> -->
+	    Press the button and say something. The page captures what you said in a box, and then reads that back to you. <!-- <i>FIXME: There are options for voice, pitch, rate.</i> --> You have to press the button again for each round.
 	  </li>
 	  <li>
-	    <a href="continuous-loopback.html"><b>Continuous Loopback</b></a> evaluates how well the speech recognition can tell when you’re at the end of sentence. It is just like Echo, but without the button.
+	    <a href="continuous-loopback.html"><b>Continuous Loopback</b></a> evaluates how well the speech recognition can tell when you’re at the end of sentence. It is just like Echo, but the button only has to be pressed once and then goes away.
 	  </li>
 	  <li>
 	    <a href="commands.html"><b>Commands</b></a> lets you evaluate what it might be like to have a pet that listens to your voice. It is like Continuous Echo without the playback. Instead, there is a picture that shows an animal doing the things you suggest, such as:
@@ -68,7 +68,7 @@
 	    </ul>
 	  </li>
 	  <li>
-	    <a href="bot.html"><b>Bot</b></a> can probably be skipped, but is useful for understanding how all this works. It is just like Echo, above, but instead of just speaking the text, it sends the recognized text to the sever to be looked up in the chatbot. The reply is shown in a second text box, and <i>that</i> is what is spoken.
+	    <a href="bot.html"><b>Bot</b></a> can probably be skipped, but is useful for understanding how all this works. It is just like Echo, above, but instead of just speaking the text, it sends the recognized text to the server to be looked up in the chatbot. The reply is shown in a second text box, and <i>that</i> is what is spoken. The radio button switches between two different response sets.
 	  </li>
 	  <!-- <li> -->
 	  <!--   <i>FIXME: <b>Search</b> lets you see what it would be like to have an assistant monitoring your speech, and offering choices as you go. For example, suppose that an application provides some way for users (and the application creators) to share people, places, and things, and to say something about it that acts as a label or short description. As the user talks to people or their pet, a feed could show releant suggestions off to the side. This example is like Continuous Echo without the playback. Instead, search results from this project’s bot-response text are ephemerally displayed. (Because the source code includes conversational responses on many subjects (see Pet, below), there are a wide variety of suggestions.)</i> -->
@@ -87,18 +87,27 @@
     </section>
     <section id="technology">
       <h2>Technology</h2>
-      <p><b>Speech to Text</b> is standardized in the <a href="https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition">Speech Recognition API</a>. Alas, no one officially supports it, but it is available under the name "webkitSpeechRecognition" on Chrome. <i>This is the only reason that these tests are Chrome-only.</i> And Android chrome makes an annoyting chime every time the SpeechRecognition starts listening, including after the silence timeout. (Maybe I could mute around the duration of the chime, and some versions of Chrome have a "continuous" recognition mode.) Where the standard SpeechRecognition cannot be used, one would have to polyfill with a paid service (such as Google's). Note: Chrome SpeechRecognition processes the data on its servers. So there is a time delay, and privacy considerations.</p>
+      <p><b>Speech to Text</b> is standardized in the <a href="https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition">Speech Recognition API</a>. Alas, no one officially supports it, but it is available under the name "webkitSpeechRecognition" on Chrome. <i>This is the only reason that these tests are Chrome-only.</i> Also Android chrome makes an annoyting chime every time the SpeechRecognition starts listening, including after the silence timeout. (Maybe I could mute around the duration of the chime, and some versions of Chrome have a "continuous" recognition mode.)</p>
+      <p>Where the standard SpeechRecognition cannot be used, one would have to polyfill with a paid service (such as Google's). Note: Chrome SpeechRecognition processes the data on its servers. So there is a time delay, and privacy considerations.</p>
       <p><b>Text to Speech</b> is built into every modern browser under the <a href="https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis">Speech Synthesis API</a>. Note: it must be turned on by user action -- there is no way to make it start speaking on page load without the user clicking on <i>something</i>.</p>
       <p><b>Chatbot</b> engines - based on typed text - have been around since the <a href="https://en.wikipedia.org/wiki/ELIZA">mid '60's</a>. The <a href="https://www.salon.com/2003/02/26/loebner_part_one/">Loebner prize</a> drove further development in the '90's and 00's, in which most engines had a large corpus of stylized text-match/responses, and an engine that applies them. Here we use:
 	  <ol>
-	    <li>The Javascript version of the <a href="https://www.rivescript.com/">RiveScript</a> engine. It uses a nice <a href="https://www.rivescript.com/docs/tutorial">plaintext response set</a>. This should be easier for us to edit than, e.g., the XML that was used in the '90's.</li>
-	    <li>The public <a href="https://github.com/aichaos/aiden">"Aiden"</a> response set corpus for Rivesceript. Note: while RiveScript is MIT license, Aiden is CCA-4 ShareAlike. This set is quite small, and not very good. (I had started to use one of the several versions of the turn-of-the-century response sets that were usedf by the A.L.I.C.E. foundation for Loebner. I grabbed one of these <a href="https://code.google.com/archive/p/aiml-en-us-foundation-alice/">'aaa' or AIML sets</a>, and translated it to RiveScript using <a href="https://github.com/aichaos/aiml2rs">aiml2rs</a>. A lot of fix up was required. But then I came across Aiden, but since Aiden isn't very good, I may go back to that.)</li>
+	    <li><b>engine</b>: The Javascript version of the <a href="https://www.rivescript.com/">RiveScript</a> engine. It uses a nice <a href="https://www.rivescript.com/docs/tutorial">plaintext response set</a>. This should be easier for us to edit than, e.g., the XML that was used in the '90's. Note: I don't know what quirks we'll find with RiveScript. For example, one thing I do know, is that the "variables" that the engine learns about each user are kept in memory, without provision for persisting to a long-term storage that are shared between Web server instances.</li>
+	    <li><b>response set corpus</b>: Needs work.
+	      <p>For the <b>Bot</b> example, I used the <a href="https://github.com/aichaos/aiden">"Aiden"</a> response set corpus for RiveScript. It is very very limited, and has some bugs.</p>
+	      <p>The <b>Bot</b> page also has an option to use one of the several versions of the turn-of-the-century response sets that were used by the A.L.I.C.E. foundation for Loebner. I grabbed one of these <a href="https://code.google.com/archive/p/aiml-en-us-foundation-alice/">'aaa' or AIML sets</a>, and translated it to RiveScript using <a href="https://github.com/aichaos/aiml2rs">aiml2rs</a>. A lot of fix up was required, and it is very very bugy. Besides, it seems to be very focused on giving Loebner-price judges the business, which isn't what we want here.</p>
+	      <p>There may be better choices. In 2013-14, the AIML/A.L.I.C.E. author (Richard Wallace) created an improved <a href="https://code.google.com/archive/p/aiml-en-us-foundation-alice2/">AIML 2.0 with an updated corpus</a>, and a new Java-based program to run it called <a href="https://code.google.com/archive/p/program-ab/">ab</a>. (The original was in Lisp.) But this project soon died. I don't know if it worked, worked well, or what it would take to adapt it to our uses.</p>
+	      <p>For the smart dumb <b>Pet</b> example, I simplified the Aiden set, and made some very minimal additions.</p>
+	    </li>
 	  </ol>
-	    There may be better choices. In 2013-14, the AIML/A.L.I.C.E. author (Richard Wallace) created an improved <a href="https://code.google.com/archive/p/aiml-en-us-foundation-alice2/">AIML 2.0 with an updated corpus</a>, and a new Java-based program to run it called <a href="https://code.google.com/archive/p/program-ab/">ab</a>. (The original was in Lisp.) But this project soon died. I don't know if it worked, worked well, or what it woiuld take to adapt it to our uses. So for this experiment, I went with the older, proven material.
-	  <br>
-	  And I don't know what quirks we'll find with RiveScript. For example, one thing I do know, is that the "variables" that the engine learns about each user are kept in memory, without provision for persisting to a long-term storage that are shared between Web server instances.
+	    
       </p>
-      <p><b>Integration<b> is suprisingly easy. The entire server application is <i>FIXME here</i>, and the entire client side is <i>FIXME here</i> (and much of the latter is in getting the Continuous Loopback to work reliably).
+      <p><b>Integration</b> is suprisingly easy.
+	<ul>
+	  <li>Much of the tiny <a href="https://github.com/howard-stearns/bot/blob/master/index.js">server application </a> is for handling multiple bot personalities.</li>
+	  <li>Much of the tiny <a href="https://github.com/howard-stearns/bot/blob/master/public/js/pet.js">client-side</a> is getting the Continuous Loopback to work reliably.</li>
+	</ul>
+	While the standalone <b>Commands</b> demo uses a long, ad-hoc Javascript <a href="https://github.com/howard-stearns/bot/blob/master/public/js/commands.js"><code>switch</code> statement</a>, the <b>Pet</b> demo integrated with the chat engine has <a href="https://github.com/howard-stearns/bot/blob/master/rs/pet.rive">chat responses</a> that begin with the word <code>command</code>. The bottom of the client-side code strips out bot responses that begin with <code>command</code>, and handles them directly instead of speaking them.
       </p>
     </section>
   </body>

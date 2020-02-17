@@ -47,6 +47,7 @@ recognition.onresult = event => {
 	pet.src = "http://allpetnews.com/wp-content/uploads/2011/10/Dog-Rolling-Over.jpg";
 	break;
     case 'play dead':
+    case 'play dad':	
 	pet.src = "https://i.imgflip.com/2kut2n.jpg"
 	break;
     case 'fetch':
@@ -67,6 +68,7 @@ recognition.onresult = event => {
 	break;
     case 'go back':
     case 'stop':
+    case 'quit':	
 	window.location.href = "index.html";
 	break;
     case 'speak':

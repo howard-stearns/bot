@@ -1,9 +1,9 @@
 /******************************************************************************
- * Aiden - A RiveScript Chatbot Personality                                   *
+ * Pet - A RiveScript Chatbot Personality                                     *
  *----------------------------------------------------------------------------*
  * This source code is released under a Creative Commons                      *
  * Attribution-ShareAlike International License.                              *
- * (C) Noah Petherbridge 2015                                                 *
+ * This was inpsired by Noah Petherbridge "Aiden", 2015, but since changed.   *
  ******************************************************************************/
 ! version = 2.0
 
@@ -11,7 +11,7 @@
  * All the common first names ever.
  ***/
 
-! array first_names = aaron aaron abbey abbie abby abdul abe abel abigail abraham
+! array firstnames = aaron abbey abbie abby abdul abe abel abigail abraham
     ^ abram ada adah adalberto adaline adam adam adan addie adela adelaida
     ^ adelaide adele adelia adelina adeline adell adella adelle adena adina
     ^ adolfo adolph adria adrian adrian adriana adriane adrianna adrianne adrien
@@ -407,7 +407,7 @@
     ^ normand norris nova novella nu nubia numbers numbers nydia nyla obdulia
     ^ ocie octavia octavio oda odelia odell odell odessa odette odilia odis
     ^ ofelia ok ola olen olene oleta olevia olga olimpia olin olinda oliva olive
-    ^ oliver oliver olivia ollie ollie olympia oma omar omega omer ona oneida
+    ^ olivier oliver olivia ollie ollie olympia oma omar omega omer ona oneida
     ^ onie onita opal ophelia ora oralee oralia oren oretha orlando orpha orval
     ^ orville oscar oscar ossie osvaldo oswaldo otelia otha otha otilia otis
     ^ otto ouida owen ozell ozella ozie pa pablo page paige palma palmer palmira

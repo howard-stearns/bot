@@ -1,0 +1,32 @@
+/******************************************************************************
+ * Pet - A RiveScript Chatbot Personality                                     *
+ *----------------------------------------------------------------------------*
+ * This source code is released under a Creative Commons                      *
+ * Attribution-ShareAlike International License.                              *
+ * This was inpsired by Noah Petherbridge "Aiden", 2015, but since changed.   *
+ ******************************************************************************/
+! version = 2.0
+
+/***
+ * alcohol names
+ ***/
+
+! array alcohol = absinthe bourbon brandy cognac gin kahlua mezcal
+    ^ moonshine rum sake sambuca schnapps scotch tequila vodka
+    ^ whiskey bacardi bailey ballantine captain captain morgan chivas regal
+    ^ ciroc crown curacao don julio evan williams fireball grey goose
+    ^ hennessy hpnotiq jägermeister jameson jim beam johnnie walker jose
+    ^ cuervo karkov kraken patron ricard scotch skyy smirnoff stoli amaretto
+    ^ americano boulevardier cosmo daiquiri gimlet hurricane julep kamikaze
+    ^ lemon drop mai tai manhatten margarita martini mimosa mojito mudslide
+    ^ mule negroni paloma pina colada pink lady rob roy rumrunner sazerac
+    ^ screwdriver shaker shirley temple sidecar tom collins tonic ale amber
+    ^ bock cider dortmunder dunkel ipa lager pilsner porter saison stout
+    ^ amstel budweiser busch coors corona don equis foster grolsch guinness
+    ^ hamm heineken killian leinenkugel michelob miller modelo negra modelo
+    ^ newcastle pabst paulaner peroni pilsner urquell samuel adams schlitz
+    ^ sierra nevada stella artois yuengling barley barrell brewer brewsky
+    ^ growler hops keg pint pub bellini bordeaux bubbly cabernet champagne
+    ^ chardonnay chianti cork malbec merlot moscato muscat pinot port
+    ^ prosecco riesling rosé sangria sauvignon blanc sherry shiraz spritz
+    ^ zinfandel

@@ -1,0 +1,19 @@
+/******************************************************************************
+ * Pet - A RiveScript Chatbot Personality                                     *
+ *----------------------------------------------------------------------------*
+ * This source code is released under a Creative Commons                      *
+ * Attribution-ShareAlike International License.                              *
+ * This was inpsired by Noah Petherbridge "Aiden", 2015, but since changed.   *
+ ******************************************************************************/
+! version = 2.0
+! local concat = space
+
+/***
+ * General chit-chat.
+ ***/
+
++ [*] @lol [*]
+- What's so funny?
+- What are you laughing at?
+- Lol :)
+- Hehe
