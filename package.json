@@ -1,20 +1,22 @@
 {
-   "name": "bot",
-   "version": "0.0.1",
-   "description": "play/test bot tech",
-   "main": "index.js",
-   "scripts": {
-      "start": "node index.js",
-      "test": "echo \"Error: no test specified\" && exit 1"
-   },
-   "author": "Howard Stearns",
-   "license": "MIT",
-   "dependencies": {
-      "aiml-high": "0.0.8",
-      "aimlinterpreter": "^0.1.7",
-      "express": "^4.15.2",
-      "rivescript": "^2.0.0",
-      "socketio": "^1.0.0",
-      "universal_bot": "0.0.32"
-   }
+    "name": "bot",
+    "version": "0.0.1",
+    "description": "play/test bot tech",
+    "main": "index.js",
+    "scripts": {
+	"start": "node index.js",
+	"test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "engines": {"node": "12.x"},
+    "author": "Howard Stearns",
+    "license": "MIT",
+    "dependencies": {
+	"aiml-high": "0.0.8",
+	"aimlinterpreter": "^0.1.7",
+	"elasticlunr": "^0.9.5",
+	"express": "^4.15.2",
+	"rivescript": "^2.0.0",
+	"socketio": "^1.0.0",
+	"universal_bot": "0.0.32"
+    }
 }

@@ -40,7 +40,7 @@
     <section id="examples">
       <h2>Examples</h2>
       <p>
-	To evaluate the possibilities, we break things out into five separate tests. The "demo" is really the last of these, but looking at each one in turn should give you an idea of what is actually going on, especially where there are aspects that can be improved:
+	To evaluate the possibilities, we break things out into six separate tests. The "demo" is really the last of these, but looking at each one in turn should give you an idea of what is actually going on, especially where there are aspects that can be improved:
 	<ol>
 	  <li>
 	    <a href="echo.html"><b>Echo</b></a> lets you evaluate:
@@ -52,6 +52,8 @@
 	  </li>
 	  <li>
 	    <a href="continuous-loopback.html"><b>Continuous Loopback</b></a> evaluates how well the speech recognition can tell when you’re at the end of sentence. It is just like Echo, but the button only has to be pressed once and then goes away.
+	  </li>
+	  <li><a href="search.html"><b>Search</b></a> lets you see what it would be like to have an assistant monitoring your speech, and offering choices as you go. For example, suppose that an application provides some way for users (and the application creators) to share people, places, and things, and to say something about it that acts as a label or short description. As the user talks to people or their pet, a feed could show releant suggestions off to the side. This example is like Continuous Loopback without the playback. Instead, search results from this project’s bot-response text are ephemerally displayed. (Because the source code includes conversational responses on many subjects (see Pet, below), there are a wide variety of suggestions.)
 	  </li>
 	  <li>
 	    <a href="commands.html"><b>Commands</b></a> lets you evaluate what it might be like to have a pet that listens to your voice. It is like Continuous Echo without the playback. Instead, there is a picture that shows an animal doing the things you suggest, such as:
@@ -70,15 +72,12 @@
 	  <li>
 	    <a href="bot.html"><b>Bot</b></a> can probably be skipped, but is useful for understanding how all this works. It is just like Echo, above, but instead of just speaking the text, it sends the recognized text to the server to be looked up in the chatbot. The reply is shown in a second text box, and <i>that</i> is what is spoken. The radio button switches between two different response sets.
 	  </li>
-	  <!-- <li> -->
-	  <!--   <i>FIXME: <b>Search</b> lets you see what it would be like to have an assistant monitoring your speech, and offering choices as you go. For example, suppose that an application provides some way for users (and the application creators) to share people, places, and things, and to say something about it that acts as a label or short description. As the user talks to people or their pet, a feed could show releant suggestions off to the side. This example is like Continuous Echo without the playback. Instead, search results from this project’s bot-response text are ephemerally displayed. (Because the source code includes conversational responses on many subjects (see Pet, below), there are a wide variety of suggestions.)</i> -->
-	  <!-- </li> -->
 	  <li>  
-	    <a href="pet.html"><b>Pet</b></a> combines Continuous Loopback, Command, <!-- Search, --> and Bot. This pet only knows some basic interactions about itself and you, and some tricks.
+	    <a href="pet.html"><b>Pet</b></a> combines Continuous Loopback, Search, Command, and Bot. This pet only knows some basic interactions about itself and you, and some tricks.
 	    <ul>
 	      <li>If there is a chat result, the response text is shown and voiced out loud.</li>
 	      <li>Pet actions are executed when applicable.</li>
-	      <!-- <li>Any applicable search results are also shown.</li> -->
+	      <li>Any applicable search results are also shown.</li>
 	      <!-- <li><i>FIXME: There is now an interaction between the above. For example, “quiet” stops talking back (although it keeps listening). You can name your pet, after which it will respond.</i></li> -->
 	    </ul>
 	  </li>

@@ -34,7 +34,7 @@
 - I am your pet.
 
 + [*] (who are you|what is your name|what do they call you) [*]
-* <bot name> == undefined => I don't think I have name. What would like to call me?
+* <bot name> == undefined => I don't think I have a name. What would you like to call me?
 - My name is <bot name>.
 - I'm <bot name>.
 - They call me <bot name>.

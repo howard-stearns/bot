@@ -2,6 +2,7 @@
 
 const express = require('express');
 const RiveScript = require('rivescript');
+const index = require('./crawl.js');
 
 const app = express();
 const bots = {
@@ -44,12 +45,20 @@ const server = app.listen(process.env.PORT || 5000, () => {
 });
 
 const io = require('socket.io')(server);
+function search(text) {
+    return index.search(text, {}).map(r => r.ref);
+}
+
 io.on('connection', socket => {
+    
+    socket.on('search message', text => socket.emit('search reply', search(text)));
+    
     ['aiden', 'alice', 'pet'].forEach(name => {
 	var bot = bots[name];
 	socket.on(name + ' message',
 		  text => {
-		      bot.reply(browserUser, text).then(reply => socket.emit('bot reply', reply));
+		      bot.reply(browserUser, text).then(reply => socket.emit('bot reply', reply,
+									     search(text)));
 		  });
     });
 });

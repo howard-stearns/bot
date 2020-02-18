@@ -92,3 +92,11 @@ button:focus {
 .fa-github::before {
     content: "\f09b";
 }
+references {
+    position: absolute;
+    left: 0;
+}
+
+references a {
+    display: block;
+}
