@@ -7,7 +7,7 @@ const app = express();
 const bots = {
     aiden: new RiveScript(),
     alice: new RiveScript(),
-    pet: new RiveScript()
+    pet: new RiveScript({errors: {replyNotMatched: ''}})
 };
 const testUser = 'internal test user';
 const browserUser = 'a user'; // Could be something persisted with each individual user.
@@ -18,19 +18,22 @@ const browserUser = 'a user'; // Could be something persisted with each individu
 	bot.sortReplies();
 	if (name !== 'pet') return;
 	bot.setUservar (browserUser, 'isGroupChat', 'true'); // Disables "interview" mode.
-	bot.setUservar (testUser, 'isGroupChat', 'true'); // Disables "interview" mode.	
-	["Hi",
-	 "what is your name",
-	 "Gin",
-	 "what is your name",
-	 "I think I'd like to change your name to Dave",
-	 "what is your name",
-	 "what is my name",
-	 "Howard",
-	 "what is my name"
-	].reduce((promise, text) => {
-    	    return promise.then(_ => bot.reply(testUser, text).then(reply => console.log(text, '=>', reply)));
-	}, Promise.resolve());
+	// bot.setUservar (testUser, 'isGroupChat', 'true'); // Disables "interview" mode.	
+	// ["Hi",
+	//  "what is your name",
+	//  "Gin",
+	//  "what is your name",
+	//  "I think I'd like to change your name to Dave",
+	//  "what is your name",
+	//  "what is my name",
+	//  "Howard",
+	//  "what is my name",
+	//  "this really shouldn't match anything",
+	//  "Dave, I'm tired",
+	//  "What do you know?"
+	// ].reduce((promise, text) => {
+    	//     return promise.then(_ => bot.reply(testUser, text).then(reply => console.log(text, '=>', reply)));
+	// }, Promise.resolve());
     }).catch(console.error);
 });
 

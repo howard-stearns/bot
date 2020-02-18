@@ -45,3 +45,23 @@
 
 + ok
 - ok
+
+! array cursewords = fuck shit piss asshole bastard damn cunt penis bollocks bugger choad crikey shag wanker twat root asshole fucking
+
+! array cursephrases = bloody hell|dick head|son of a bitch|bloody oath|bloody hell|taking the piss|suck it|get stuffed|bugger me|buffer off|fair suck of the sav
+
+
++ [*] (@cursewords|@cursephrases) [*]
+- Be nice!
+- Hey!
+- Watch yourself.
+
++ _ (rubbish|bitch)
+@ shit
+
++ * is * bitch|dick|ass
+@ shit
+
++ bitch|dick|ass
+@ shit
+

@@ -12,12 +12,22 @@
  * Catch-all miscellaneous messages from the user.
  ***/
 
-+ *
++ <bot name> *
 - {@int random question}{weight=3}
 - That's interesting.
 - Um. . .
 - I see.
 - Go on...
+- I don't really know much.
+
++ what
+% i do not really know much
+@ what do you know
+
++ what do you know [*]
+- I can learn my name, and I know a few things about myself. I can learn about you.\s
+  ^ And I know some jokes, and some tricks, like sit, shake, roll over, and the like. I can find a few things.\s
+  ^ Otherwise, I try to keep my mouth shut unless you call me.
 
 + int random question
 - {@int ask user variable}

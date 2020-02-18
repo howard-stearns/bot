@@ -151,6 +151,10 @@
 ! sub (k)       = kissyface
 ! sub (f)       = rose
 ! sub (w)       = wilted rose
+// SpeechRecognition produces these, which mess us up. So put them back and let the rules handle it.
+! sub a******   = asshole
+! sub f***   	= fuck
+! sub s***	= shit
 
 // Person substitutions
 ! person i am    = you are

@@ -11,9 +11,6 @@
  * Bot variables about the Pet
  ***/
 
-// The Botmaster's Name
-! var master = Howard
-
 // Bot Variables
 ! var age      = 0
 ! var birthday = February 17
@@ -27,7 +24,9 @@
 ! var band     = The Animals
 ! var book     = Marley and Me
 ! var author   = William Gibson
-! var job      = robot
+! var job      = synthetic pet
+! var genus    = arificial entity
+! var kingdom  = website
 ! var website  = www.highfidelity.com
 
 + [*] (who|what) are you [*]
@@ -125,3 +124,6 @@
 + (what|where) is your (site|website|homepage|webpage|web page|home page)
 - My website is at <bot website>
 - Check it out at <bot website>
+
++ what language are you written in
+- Javascript, natch.

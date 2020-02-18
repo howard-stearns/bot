@@ -52,11 +52,11 @@
 + (call me|i am|i am called|im) (@firstnames) [*]
 @ my name is <star2>
 
-+ my name is (<bot master>){weight=1}
-- <set name=<formal>>That's my master's name too.
-
-+ (call me|i am|i am called|im) (<bot master>) [*]{weight=1}
-@ my name is <star2> // TODO https://github.com/aichaos/rivescript-go/issues/1
+//+ my name is (<bot master>){weight=1}
+//- <set name=<formal>>That's my master's name too.
+//
+//+ (call me|i am|i am called|im) (<bot master>) [*]{weight=1}
+//@ my name is <star2> // TODO https://github.com/aichaos/rivescript-go/issues/1
 
 + (call me|i am|i am called) * *
 - I only want to know your first name. Which one of those names do you want\s

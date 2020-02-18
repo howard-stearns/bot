@@ -33,6 +33,7 @@ recognition.onresult = event => {
     let text = results[last][0].transcript;
     console.log(`Result has been detected at ${last}.`);
     outputYou.textContent = text;
+    outputBot.textContent = '';
     console.log('Confidence: ' + results[0][0].confidence);
     thinking = true;
     socket.emit('pet message', text);
